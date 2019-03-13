@@ -1,0 +1,5 @@
+deb http://repo-bionic.windmaker.net/ bionic main
+deb http://repo-bionic.windmaker.net/ any windmaker
+deb http://packages.windmaker.net/ any main
+deb [arch=amd64] http://packages.windmaker.net/ bionic main
+deb [arch=amd64] http://repo.daedalus-project.io/ any daedalus
