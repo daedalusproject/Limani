@@ -7,7 +7,7 @@ build_base_image:
     script:
         - RELEASEDATE=$(date)
         - docker build --no-cache -t base -f base/Dockerfile .
-        - docker login --username $DOCKERHUBUSER --password $DOCKERHUBPASSWORD
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name=base -i base
         - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>"
         - docker push daedalusproject/base
