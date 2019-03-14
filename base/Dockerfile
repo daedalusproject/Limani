@@ -8,8 +8,8 @@ RUN \
  wget -O - http://repo-bionic.windmaker.net/repo-bionic.windmaker.net.gpg-key.pub | apt-key add - && \
  wget -O - https://repo.daedalus-project.io/repo.daedalus-project.io.gpg-key.pub | apt-key add - && \
  apt-get purge -qq -o=Dpkg::Use-Pty=0 -y wget && \
- apt-get autoremove && \
- apt-get autoclean && \
+ apt-get autoremove -qq -o=Dpkg::Use-Pty=0 -y && \
+ apt-get autoclean -qq -o=Dpkg::Use-Pty=0 -y && \
  rm -rf /var/lib/apt/lists/*
 COPY repos/sources.list /etc/apt/sources.list
 RUN apt-get update -qq && rm -rf /var/lib/apt/lists/*
