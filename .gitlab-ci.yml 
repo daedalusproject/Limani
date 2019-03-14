@@ -1,0 +1,16 @@
+stages:
+    - build_base
+
+build_base_image:
+    stage: build_base
+    image: docker:stable
+    script:
+        - RELEASEDATE=$(date)
+        - docker build --no-cache -t base -f base/Dockerfile .
+        - docker login --username $DOCKERHUBUSER --password $DOCKERHUBPASSWORD
+        - docker create --name=base -i base
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>"
+        - docker push daedalusproject/base
+        - docker stop base
+        - docker rm base
+        - docker rmi base
