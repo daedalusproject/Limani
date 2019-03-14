@@ -9,7 +9,7 @@ build_base_image:
         - docker build --no-cache -t base -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name=base -i base
-        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" daedalusproject/base
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" base daedalusproject/base
         - docker push daedalusproject/base
         - docker stop base
         - docker rm base
