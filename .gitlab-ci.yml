@@ -1,6 +1,6 @@
 stages:
     - build_base
-    - build_base-node8
+    - build_base_node8
 
 build_base_image:
     stage: build_base
@@ -18,10 +18,10 @@ build_base_image:
         - docker rmi "${IMAGENAME}"
 
 build_base-node8_image:
-    stage: build_base-node8
+    stage: build_base_node8
     image: docker:stable
     script:
-        - IMAGENAME=base8
+        - IMAGENAME=base_node8
         - RELEASEDATE=$(date)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f base-node8/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
