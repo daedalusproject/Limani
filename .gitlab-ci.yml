@@ -1,16 +1,33 @@
 stages:
     - build_base
+    - build_base_node8
 
 build_base_image:
     stage: build_base
     image: docker:stable
     script:
+        - IMAGENAME=base
         - RELEASEDATE=$(date)
-        - docker build --no-cache -t base -f base/Dockerfile .
+        - docker build --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
-        - docker create --name=base -i base
-        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" base daedalusproject/base
-        - docker push daedalusproject/base
-        - docker stop base
-        - docker rm base
-        - docker rmi base
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - docker push daedalusproject/"${IMAGENAME}"
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
+
+build_base-node8_image:
+    stage: build_base_node8
+    image: docker:stable
+    script:
+        - IMAGENAME=base_node8
+        - RELEASEDATE=$(date)
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - docker push daedalusproject/"${IMAGENAME}"
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
