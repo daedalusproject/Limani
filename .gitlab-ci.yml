@@ -2,6 +2,7 @@ stages:
     - build_base
     - build_base_node8
     - build_base_nginx_light
+    - build_base_hugo
 
 build_base_image:
     stage: build_base
@@ -38,6 +39,21 @@ build_base_nginx_light_image:
     image: docker:stable
     script:
         - IMAGENAME=base_nginx_light
+        - RELEASEDATE=$(date)
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - docker push daedalusproject/"${IMAGENAME}"
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
+
+build_base_hugo_image:
+    stage: build_base_hugo
+    image: docker:stable
+    script:
+        - IMAGENAME=base_hugo
         - RELEASEDATE=$(date)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
