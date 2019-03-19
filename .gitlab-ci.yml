@@ -10,7 +10,7 @@ build_base_image:
     script:
         - IMAGENAME=base
         - RELEASEDATE=$(date)
-        - docker build --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
         - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
