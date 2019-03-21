@@ -10,6 +10,7 @@ build_base_image:
     script:
         - IMAGENAME=base
         - RELEASEDATE=$(date)
+        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -25,6 +26,7 @@ build_base_node8_image:
     script:
         - IMAGENAME=base_node8
         - RELEASEDATE=$(date)
+        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -40,6 +42,7 @@ build_base_nginx_light_image:
     script:
         - IMAGENAME=base_nginx_light
         - RELEASEDATE=$(date)
+        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -55,11 +58,15 @@ build_base_hugo_image:
     script:
         - IMAGENAME=base_hugo
         - RELEASEDATE=$(date)
+        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "6-hugo_base" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":latest
         - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
-        - docker push daedalusproject/"${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "6-hugo_base" ]; then docker push daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker push daedalusproject/"${IMAGENAME}":latest
         - docker stop "${IMAGENAME}"
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
