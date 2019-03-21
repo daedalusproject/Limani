@@ -66,9 +66,9 @@ build_base_hugo_image:
         - IMAGENAME=base_hugo
         - RELEASEDATE=$(date)
         - DATESTRING=$(cat timestamp/timestampfile)
-        - BASEIMAGE=$(echo -e $(grep "FROM " Dockerfile | sed 's/:.*//' | sed 's/FROM //')):DATESTRING
+        - BASEIMAGE=$(echo -e $(grep "FROM " "${IMAGENAME}"/Dockerfile | sed 's/:.*//' | sed 's/FROM //')):$DATESTRING
         - echo $BASEIMAGE
-        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
+        - docker build --network=host --no-cache -t "${IMAGENAME}" --target $BASEIMAGE -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
         - if [ "${CI_COMMIT_REF_NAME}" == "6-hugo_base" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
