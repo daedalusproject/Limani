@@ -4,13 +4,15 @@ stages:
     - build_base_nginx_light
     - build_base_hugo
 
+before_script:
+    - DATESTRING=$(date +%Y%m%d%H%M)
+
 build_base_image:
     stage: build_base
     image: docker:stable
     script:
         - IMAGENAME=base
         - RELEASEDATE=$(date)
-        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -26,7 +28,6 @@ build_base_node8_image:
     script:
         - IMAGENAME=base_node8
         - RELEASEDATE=$(date)
-        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -42,7 +43,6 @@ build_base_nginx_light_image:
     script:
         - IMAGENAME=base_nginx_light
         - RELEASEDATE=$(date)
-        - DATESTRING=$(date +%Y%m%d%H%M)
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -58,7 +58,7 @@ build_base_hugo_image:
     script:
         - IMAGENAME=base_hugo
         - RELEASEDATE=$(date)
-        - DATESTRING=$(date +%Y%m%d%H%M)
+        - echo $DATESTRING
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
