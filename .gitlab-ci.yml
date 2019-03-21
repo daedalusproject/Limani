@@ -10,7 +10,8 @@ build_base_image:
     script:
         - IMAGENAME=base
         - RELEASEDATE=$(date)
-        - date +%Y%m%d%H%M > /tmp/timestamp_$CI_BUILD_REF_NAME
+        - mkdir timestamp
+        - date +%Y%m%d%H%M > timestamp/timestampfile
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
@@ -19,6 +20,10 @@ build_base_image:
         - docker stop "${IMAGENAME}"
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 15 minutes
 
 build_base_node8_image:
     stage: build_base_node8
@@ -56,7 +61,7 @@ build_base_hugo_image:
     script:
         - IMAGENAME=base_hugo
         - RELEASEDATE=$(date)
-        - DATESTRING=$(cat /tmp/timestamp_$CI_BUILD_REF_NAME)
+        - DATESTRING=$(cat timestamp/timestampfile)
         - echo $DATESTRING
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
@@ -69,3 +74,5 @@ build_base_hugo_image:
         - docker stop "${IMAGENAME}"
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
+    dependencies:
+    - build_base_image
