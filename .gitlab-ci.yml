@@ -4,8 +4,9 @@ stages:
     - build_base_nginx_light
     - build_base_hugo
 
-before_script:
-    - DATESTRING=$(date +%Y%m%d%H%M)
+setup:
+    script:
+        - DATESTRING=$(date +%Y%m%d%H%M)
 
 build_base_image:
     stage: build_base
