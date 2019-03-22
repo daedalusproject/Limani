@@ -1,8 +1,6 @@
 stages:
     - build_base
-    - build_base_node8
-    - build_base_nginx_light
-    - build_base_hugo
+    - build_base_inherited_images
 
 build_base_image:
     stage: build_base
@@ -30,7 +28,7 @@ build_base_image:
         expire_in: 15 minutes
 
 build_base_node8_image:
-    stage: build_base_node8
+    stage: build_base_inherited_images
     image: docker:stable
     script:
         - IMAGENAME=base_node8
@@ -53,7 +51,7 @@ build_base_node8_image:
     - build_base_image
 
 build_base_nginx_light_image:
-    stage: build_base_nginx_light
+    stage: build_base_inherited_images
     image: docker:stable
     script:
         - IMAGENAME=base_nginx_light
@@ -76,7 +74,7 @@ build_base_nginx_light_image:
     - build_base_image
 
 build_base_hugo_image:
-    stage: build_base_hugo
+    stage: build_base_inherited_images
     image: docker:stable
     script:
         - IMAGENAME=base_hugo
