@@ -11,7 +11,7 @@ build_base_image:
         - IMAGENAME=base
         - RELEASEDATE=$(date)
         - mkdir timestamp
-        - DATESTRING=$(+%Y%m%d%H%M)
+        - DATESTRING=$(date +%Y%m%d%H%M)
         - echo $DATESTRING > timestamp/timestampfile
         - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
