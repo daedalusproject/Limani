@@ -67,7 +67,7 @@ build_base_hugo_image:
         - RELEASEDATE=$(date)
         - DATESTRING=$(cat timestamp/timestampfile)
         - BASEIMAGE=$(echo -e $(grep "FROM " "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/FROM //'))
-        -  if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then BASEIMAGE=$(echo -e $BASEIMAGE:$DATESTRING; fi
+        -  if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then BASEIMAGE=$(echo -e $BASEIMAGE:$DATESTRING); fi
         - echo $BASEIMAGE
         - docker build --network=host --no-cache -t "${IMAGENAME}" --target $BASEIMAGE -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
