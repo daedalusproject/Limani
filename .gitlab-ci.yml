@@ -95,3 +95,26 @@ build_base_hugo_image:
         - docker rmi "${IMAGENAME}"
     dependencies:
     - build_base_image
+
+build_base_daedaluscore_image:
+    stage: build_base_inherited_images
+    image: docker:stable
+    script:
+        - IMAGENAME=base_daedaluscore
+        - RELEASEDATE=$(date)
+        - DATESTRING=$(cat timestamp/timestampfile)
+        - BASEIMAGE=$(echo -e $(grep "ARG BASE_IMAGE=" "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/ARG BASE_IMAGE=//'))
+        -  if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then BASEIMAGE="$BASEIMAGE:$DATESTRING"; else BASEIMAGE="$BASEIMAGE:latest"; fi
+        - docker build --network=host --no-cache -t "${IMAGENAME}" --build-arg BASE_IMAGE=$BASEIMAGE -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":latest
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker push daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker push daedalusproject/"${IMAGENAME}":latest
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
+    dependencies:
+    - build_base_image
