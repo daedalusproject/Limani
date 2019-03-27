@@ -164,4 +164,5 @@ build_base_deb_perl_builder_image:
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
     dependencies:
+    - build_base_image
     - build_base_deb_builder_image
