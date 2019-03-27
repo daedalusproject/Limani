@@ -10,4 +10,5 @@ Images available:
 * [base_node8](/base_node8): base image with nodejs 8 LTS.
 * [base_nginx_light](/base_nginx_light): base image with Nginx (light flavour).
 * [base_hugo](/base_hugo): base image with [Hugo](https://gohugo.io/).
+* [base__deb_builder](/base_deb_builder): base image containing Debian packaging utilities.
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
