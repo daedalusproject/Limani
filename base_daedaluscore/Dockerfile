@@ -21,7 +21,6 @@ RUN \
  libcatalyst-modules-perl \
  libcatalyst-modules-extra-perl \
  libtext-csv-xs-perl \
- libmodule-install-perl \
  libcatalyst-model-adaptor-perl \
  libdbix-class-encodedcolumn-perl \
  libcatalyst-controller-formbuilder-perl \
