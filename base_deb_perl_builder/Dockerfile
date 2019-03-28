@@ -7,6 +7,7 @@ RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y dh-make-perl \
  libmodule-install-perl \
+ libgit-wrapper-perl \
  libcatalyst-modules-perl \
  --no-install-recommends && \
  rm -rf /var/lib/apt/lists/* && \

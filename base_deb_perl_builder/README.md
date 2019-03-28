@@ -8,3 +8,5 @@ Packages installed:
 
  * dh-make-perl
  * libmodule-install-perl
+ * libgit-wrapper-perl
+ * libcatalyst-modules-perl
