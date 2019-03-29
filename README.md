@@ -4,7 +4,7 @@
 
 Docker manifests of images used by one or more Daedalus Project Sub-projects.
 
-Images available:
+## Images available
 
 * [base](/base): base image containing Daedalus Project and Windmaker repos only.
 * [base_node8](/base_node8): base image with nodejs 8 LTS.
@@ -13,3 +13,7 @@ Images available:
 * [base_deb_builder](/base_deb_builder): base image containing Debian packaging utilities.
 * [base_deb_perl_builder](/base_deb_perl_builder): base image containing Debian packaging utilities (perl flavour).
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
+
+## Develop images
+
+* [base](/base_develop): base image containing Daedalus Project testing and Windmaker repos only.
