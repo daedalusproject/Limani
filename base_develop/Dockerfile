@@ -13,6 +13,6 @@ RUN \
  echo "deb http://repo-bionic.windmaker.net/ bionic main" > /etc/apt/sources.list && \
  echo "deb http://packages.windmaker.net/ any main" >> /etc/apt/sources.list && \
  echo "deb [arch=amd64] http://packages.windmaker.net/ bionic main" >> /etc/apt/sources.list && \
- echo "deb [arch=amd64] http://repo.daedalus-project.io/ bionic main" >> /etc/apt/sources.list && \
+ echo "deb [arch=amd64] http://repo.daedalus-project.io/ bionic testing" >> /etc/apt/sources.list && \
  apt-get update -qq && \
  rm -rf /var/lib/apt/lists/*
