@@ -12,7 +12,7 @@ build_base_image:
         - mkdir timestamp
         - DATESTRING=$(date +%Y%m%d%H%M)
         - echo $DATESTRING > timestamp/timestampfile
-        - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
         - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
@@ -37,7 +37,7 @@ build_base_develop_image:
         - mkdir timestamp
         - DATESTRING=$(date +%Y%m%d%H%M)
         - echo $DATESTRING > timestamp/timestampfile
-        - docker build --network=host --no-cache -t "${IMAGENAME}" -f base/Dockerfile .
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
         - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
         - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
         - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
