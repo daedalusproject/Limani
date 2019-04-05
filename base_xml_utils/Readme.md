@@ -7,3 +7,4 @@ This image is based on Daedalus Project [base image](/base) comes with XML utils
 Packages installed:
 
  * libxml2-utils
+ * xmlstarlet
