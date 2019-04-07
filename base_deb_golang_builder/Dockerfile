@@ -9,6 +9,7 @@ RUN \
  dh-golang \
  golang-any \
  golang-golang-x-sys-dev \
+ golang-go \
  --no-install-recommends && \
  rm -rf /var/lib/apt/lists/* && \
  echo -e "DEBEMAIL=\"alvaro.castellano.vela@gmail.com\"\nDEBFULLNAME=\"Álvaro Castellano Vela\"\nexport DEBEMAIL DEBFULLNAME\n" >> ~/.bashrc.backup

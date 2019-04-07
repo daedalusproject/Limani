@@ -9,3 +9,4 @@ Packages installed:
  * dh-golang
  * golang-any
  * golang-golang-x-sys-dev
+ * golang-go
