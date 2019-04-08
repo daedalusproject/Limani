@@ -9,4 +9,5 @@ RUN \
  libxml2-utils \
  xmlstarlet \
  --no-install-recommends && \
+ apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

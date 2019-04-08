@@ -42,4 +42,5 @@ RUN \
  libcatalyst-plugin-cache-perl \
  libredis-perl libcache-redis-perl \
  --no-install-recommends && \
+ apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
