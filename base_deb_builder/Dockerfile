@@ -9,5 +9,6 @@ RUN \
  dpkg-dev \
  build-essential \
  --no-install-recommends && \
+ apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
  echo -e "DEBEMAIL=\"alvaro.castellano.vela@gmail.com\"\nDEBFULLNAME=\"Álvaro Castellano Vela\"\nexport DEBEMAIL DEBFULLNAME\n" >> ~/.bashrc.backup
