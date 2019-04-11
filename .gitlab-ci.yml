@@ -258,7 +258,7 @@ build_base_rabbitmq_server_image:
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
     dependencies:
-    - build_base_image
+    - build_base_develop_image
 
 build_base_deb_builder_image:
     stage: build_base_inherited_images
