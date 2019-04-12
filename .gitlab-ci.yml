@@ -26,7 +26,7 @@ build_base_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 15 minutes
+        expire_in: 60 minutes
 
 build_base_develop_image:
     stage: build_base
@@ -51,7 +51,7 @@ build_base_develop_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 15 minutes
+        expire_in: 60 minutes
 
 build_base_node8_image:
     stage: build_base_inherited_images
