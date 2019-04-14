@@ -1,6 +1,7 @@
 stages:
     - build_base
     - build_base_inherited_images
+    - build_base_kubectl_inherited_images
     - build_base_inherited_builder_images
 
 build_base_image:
@@ -146,7 +147,7 @@ build_base_develop_hugo_image:
     - build_base_develop_image
 
 build_base_daedaluscore_image:
-    stage: build_base_inherited_images
+    stage: build_base_kubectl_inherited_images
     image: docker:stable
     script:
         - IMAGENAME=base_daedaluscore
@@ -166,7 +167,7 @@ build_base_daedaluscore_image:
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
     dependencies:
-    - build_base_image
+    - build_base_kubectl_image
 
 build_base_kubectl_image:
     stage: build_base_inherited_images
@@ -188,6 +189,10 @@ build_base_kubectl_image:
         - docker stop "${IMAGENAME}"
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 60 minutes
     dependencies:
     - build_base_image
 

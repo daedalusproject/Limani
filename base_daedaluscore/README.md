@@ -2,29 +2,33 @@
 
 [![Docker image](https://img.shields.io/badge/docker-latest-blue.svg)](https://hub.docker.com/r/daedalusproject/base_daedaluscore)
 
-This image is based on Daedalus Project [base image](/base) comes with [Daedalus-Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) installed.
+This image is based on Daedalus Project [base_kubectl image](/base__kubectl), it comes with [Daedalus-Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) build and test utilities installed.
 
 Packages installed:
 
+* redis-tools
+* golang golang-github-streadway-amqp-dev
+* cpanminus
+* libcatalyst-perl
 * libcatalyst-plugin-configloader-perl
 * libcatalyst-plugin-static-simple-perl
 * libcatalyst-action-renderview-perl
-* libcatalyst-view-tt-perl libcatalyst-view-json-perl
+* libcatalyst-view-tt-perl
+* libcatalyst-view-json-perl
 * libcatalyst-plugin-unicode-perl
 * libcatalyst-plugin-authentication-perl
 * libcatalyst-plugin-authorization-roles-perl
 * libnamespace-autoclean-perl
-* libmoose-perl libmoosex-nonmoose-perl
+* libmoose-perl
+* libmoosex-nonmoose-perl
 * libconfig-general-perl
 * libcatalyst-model-adaptor-perl
 * libmoosex-markasmethods-perl
 * libcatalyst-modules-perl
 * libcatalyst-modules-extra-perl
-* libtext-csv-xs-perl
 * libmodule-install-perl
 * libcatalyst-model-adaptor-perl
 * libdbix-class-encodedcolumn-perl
-* libcatalyst-controller-formbuilder-perl
 * libconfig-zomg-perl
 * libterm-readkey-perl
 * libstring-random-perl
@@ -35,11 +39,10 @@ Packages installed:
 * libdata-password-check-perl
 * libdbix-class-validation-perl
 * libdatetime-format-sqlite-perl
-* libdaedalus-hermes-perl
 * libcatalyst-plugin-configloader-multi-perl
 * libcrypt-jwt-perl
 * libdatetime-format-mysql-perl
 * libnumber-phone-perl
 * libcatalyst-plugin-cache-perl
 * libredis-perl libcache-redis-perl
-
+* libdaedalus-hermes-perl
