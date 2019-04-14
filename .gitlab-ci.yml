@@ -189,6 +189,10 @@ build_base_kubectl_image:
         - docker stop "${IMAGENAME}"
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 60 minutes
     dependencies:
     - build_base_image
 
