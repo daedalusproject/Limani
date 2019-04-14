@@ -4,8 +4,8 @@ FROM $BASE_IMAGE
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
 RUN \
- apt-get update -qq && \_base_kubectl
- apt-get install -qq -o=Dpkg::Use-Pty=0 -y \ 
+ apt-get update -qq && \
+ apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
  redis-tools \
  golang golang-github-streadway-amqp-dev \
  cpanminus \
