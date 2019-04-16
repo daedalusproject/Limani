@@ -46,6 +46,7 @@ RUN \
  libcatalyst-plugin-cache-perl \
  libredis-perl libcache-redis-perl \
  libdaedalus-hermes-perl \
+ make \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

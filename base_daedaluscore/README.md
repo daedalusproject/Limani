@@ -46,3 +46,4 @@ Packages installed:
 * libcatalyst-plugin-cache-perl
 * libredis-perl libcache-redis-perl
 * libdaedalus-hermes-perl
+* make
