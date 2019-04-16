@@ -47,6 +47,7 @@ RUN \
  libredis-perl libcache-redis-perl \
  libdaedalus-hermes-perl \
  make \
+ gcc \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
