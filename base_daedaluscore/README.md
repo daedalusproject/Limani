@@ -47,3 +47,4 @@ Packages installed:
 * libredis-perl libcache-redis-perl
 * libdaedalus-hermes-perl
 * make
+* gcc
