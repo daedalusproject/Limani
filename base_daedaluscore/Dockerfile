@@ -46,6 +46,7 @@ RUN \
  libcatalyst-plugin-cache-perl \
  libredis-perl libcache-redis-perl \
  libdaedalus-hermes-perl \
+ libsql-translator-perl \
  make \
  gcc \
  libc6-dev \
