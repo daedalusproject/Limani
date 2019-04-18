@@ -48,6 +48,7 @@ RUN \
  libdaedalus-hermes-perl \
  make \
  gcc \
+ libc6-dev \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
