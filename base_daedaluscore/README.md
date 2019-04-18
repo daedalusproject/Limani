@@ -48,3 +48,4 @@ Packages installed:
 * libdaedalus-hermes-perl
 * make
 * gcc
+* libc6-dev
