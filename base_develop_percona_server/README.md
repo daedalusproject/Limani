@@ -1,4 +1,4 @@
-# base_develop_percona_servere
+# base_develop_percona_server
 
 [![Docker image](https://img.shields.io/badge/docker-latest-blue.svg)](https://hub.docker.com/r/daedalusproject/base_develop_percona_server)
 
