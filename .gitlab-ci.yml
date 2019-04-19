@@ -336,7 +336,7 @@ build_base_deb_golang_builder_image:
     - build_base_deb_builder_image
 
 build_base_percona_server_develop_image:
-    stage: build_base_inherited_image
+    stage: build_base_inherited_images
     image: docker:stable
     script:
         - IMAGENAME=base_develop_percona_server
