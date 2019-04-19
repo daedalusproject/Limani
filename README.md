@@ -7,6 +7,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 ## Images available
 
 * [base](/base): base image containing Daedalus Project and Windmaker repos only.
+* [base_curl](/base_curl): base image with curl.
 * [base_node8](/base_node8): base image with nodejs 8 LTS.
 * [base_nginx_light](/base_nginx_light): base image with Nginx (light flavour).
 * [base_hugo](/base_hugo): base image with [Hugo](https://gohugo.io/).
