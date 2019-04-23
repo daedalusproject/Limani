@@ -335,11 +335,11 @@ build_base_deb_golang_builder_image:
     - build_base_image
     - build_base_deb_builder_image
 
-build_base_percona_server_develop_image:
+build_base_percona_server_image:
     stage: build_base_inherited_images
     image: docker:stable
     script:
-        - IMAGENAME=base_develop_percona_server
+        - IMAGENAME=base_percona_server
         - RELEASEDATE=$(date)
         - DATESTRING=$(cat timestamp/timestampfile)
         - BASEIMAGE=$(echo -e $(grep "ARG BASE_IMAGE=" "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/ARG BASE_IMAGE=//'))
@@ -356,13 +356,13 @@ build_base_percona_server_develop_image:
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
     dependencies:
-    - build_base_develop_image
+    - build_base_image
 
-build_base_percona_client_develop_image:
+build_base_percona_client_image:
     stage: build_base_inherited_images
     image: docker:stable
     script:
-        - IMAGENAME=base_develop_percona_client
+        - IMAGENAME=base_percona_client
         - RELEASEDATE=$(date)
         - DATESTRING=$(cat timestamp/timestampfile)
         - BASEIMAGE=$(echo -e $(grep "ARG BASE_IMAGE=" "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/ARG BASE_IMAGE=//'))
@@ -379,4 +379,4 @@ build_base_percona_client_develop_image:
         - docker rm "${IMAGENAME}"
         - docker rmi "${IMAGENAME}"
     dependencies:
-    - build_base_develop_image
+    - build_base_image
