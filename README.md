@@ -18,6 +18,8 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_redis_server](/base_redis_server): base image containing Redis server.
 * [base_rabbitmq_server](/base_rabbitmq_server): base image containing Rabbitmq server.
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
+* [base_percona_server](/base_percona_server): base image with Percona server.
+* [base_percona_client](/base_percona_client): base image with Percona server client.
 
 ## Develop images
 

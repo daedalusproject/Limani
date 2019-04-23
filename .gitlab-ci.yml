@@ -1,8 +1,7 @@
 stages:
     - build_base
     - build_base_inherited_images
-    - build_base_kubectl_inherited_images
-    - build_base_inherited_builder_images
+    - build_base_inherited_images_2nd_gen
 
 build_base_image:
     stage: build_base
@@ -147,7 +146,7 @@ build_base_develop_hugo_image:
     - build_base_develop_image
 
 build_base_daedaluscore_image:
-    stage: build_base_kubectl_inherited_images
+    stage: build_base_inherited_images_2nd_gen
     image: docker:stable
     script:
         - IMAGENAME=base_daedaluscore
@@ -312,7 +311,7 @@ build_base_curl_image:
     - build_base_image
 
 build_base_deb_perl_builder_image:
-    stage: build_base_inherited_builder_images
+    stage: build_base_inherited_images_2nd_gen
     image: docker:stable
     script:
         - IMAGENAME=base_deb_perl_builder
@@ -336,7 +335,7 @@ build_base_deb_perl_builder_image:
     - build_base_deb_builder_image
 
 build_base_deb_golang_builder_image:
-    stage: build_base_inherited_builder_images
+    stage: build_base_inherited_images_2nd_gen
     image: docker:stable
     script:
         - IMAGENAME=base_deb_golang_builder
@@ -358,3 +357,49 @@ build_base_deb_golang_builder_image:
     dependencies:
     - build_base_image
     - build_base_deb_builder_image
+
+build_base_percona_server_image:
+    stage: build_base_inherited_images
+    image: docker:stable
+    script:
+        - IMAGENAME=base_percona_server
+        - RELEASEDATE=$(date)
+        - DATESTRING=$(cat timestamp/timestampfile)
+        - BASEIMAGE=$(echo -e $(grep "ARG BASE_IMAGE=" "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/ARG BASE_IMAGE=//'))
+        -  if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then BASEIMAGE="$BASEIMAGE:$DATESTRING"; else BASEIMAGE="$BASEIMAGE:latest"; fi
+        - docker build --network=host --no-cache -t "${IMAGENAME}" --build-arg BASE_IMAGE=$BASEIMAGE -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":latest
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker push daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker push daedalusproject/"${IMAGENAME}":latest
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
+    dependencies:
+    - build_base_image
+
+build_base_percona_client_image:
+    stage: build_base_inherited_images
+    image: docker:stable
+    script:
+        - IMAGENAME=base_percona_client
+        - RELEASEDATE=$(date)
+        - DATESTRING=$(cat timestamp/timestampfile)
+        - BASEIMAGE=$(echo -e $(grep "ARG BASE_IMAGE=" "${IMAGENAME}"/Dockerfile |sed 's/:.*//' | sed 's/ARG BASE_IMAGE=//'))
+        -  if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then BASEIMAGE="$BASEIMAGE:$DATESTRING"; else BASEIMAGE="$BASEIMAGE:latest"; fi
+        - docker build --network=host --no-cache -t "${IMAGENAME}" --build-arg BASE_IMAGE=$BASEIMAGE -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":latest
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker push daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker push daedalusproject/"${IMAGENAME}":latest
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
+    dependencies:
+    - build_base_image
