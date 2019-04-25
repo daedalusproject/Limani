@@ -15,6 +15,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_deb_perl_builder](/base_deb_perl_builder): base image containing Debian packaging utilities (perl flavour).
 * [base_deb_golang_builder](/base_deb_golang_builder): base image containing Debian packaging utilities (golang flavour).
 * [base_xml_utils](/base_xml_utils): base image containing XML utils.
+* [base_bash_utils](/base_xml_utils): base image containing bash development utils.
 * [base_redis_server](/base_redis_server): base image containing Redis server.
 * [base_rabbitmq_server](/base_rabbitmq_server): base image containing Rabbitmq server.
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
