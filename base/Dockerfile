@@ -16,4 +16,5 @@ RUN \
  echo "deb [arch=amd64] http://repo.daedalus-project.io/ bionic main" >> /etc/apt/sources.list && \
  apt-get update -qq && \
  apt-get purge -y --auto-remove && \
- rm -rf /var/lib/apt/lists/*
+ rm -rf /var/lib/apt/lists/* && \
+ adduser daedalus

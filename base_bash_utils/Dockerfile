@@ -14,3 +14,5 @@ RUN \
  gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
+
+ USER daedalus
