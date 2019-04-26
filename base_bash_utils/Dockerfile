@@ -11,6 +11,6 @@ RUN \
  make=4.1-9.1ubuntu1 \
  ruby=1:2.5.1 \
  --no-install-recommends && \
- gem install bashcov 1.8.2 --version&& \
+ gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
