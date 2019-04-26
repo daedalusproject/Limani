@@ -9,3 +9,4 @@ Packages installed:
  * shellcheck
  * shunit2
  * make
+ * bashcov
