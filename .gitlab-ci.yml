@@ -33,8 +33,21 @@ build_base_develop_image:
     image: daedalusproject/base_docker
     script:
         - IMAGENAME=base_develop
-        - IS_BASE_IMAGE=1
-        - daedalus-project-docker-build
+        - RELEASEDATE=$(date)
+        - mkdir timestamp
+        - DATESTRING=$(date +%Y%m%d%H%M)
+        - echo $DATESTRING > timestamp/timestampfile
+        - docker build --network=host --no-cache -t "${IMAGENAME}" -f "${IMAGENAME}"/Dockerfile .
+        - docker login --username "${DOCKERHUBUSER}" --password "${DOCKERHUBPASSWORD}"
+        - docker create --name="${IMAGENAME}" -i "${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker tag "${IMAGENAME}" daedalusproject/"${IMAGENAME}":latest
+        - docker commit -m "$RELEASEDATE" -a "Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>" "${IMAGENAME}" daedalusproject/"${IMAGENAME}"
+        - if [ "${CI_COMMIT_REF_NAME}" == "master" ]; then docker push daedalusproject/"${IMAGENAME}":"${DATESTRING}"; fi
+        - docker push daedalusproject/"${IMAGENAME}":latest
+        - docker stop "${IMAGENAME}"
+        - docker rm "${IMAGENAME}"
+        - docker rmi "${IMAGENAME}"
     artifacts:
         paths:
         - timestamp
