@@ -30,7 +30,7 @@ build_base_image:
 
 build_base_develop_image:
     stage: build_base
-    image: docker:stable
+    image: daedalusproject/base_docker
     script:
         - IMAGENAME=base_develop
         - RELEASEDATE=$(date)
