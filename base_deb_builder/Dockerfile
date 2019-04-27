@@ -7,6 +7,7 @@ RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
  dpkg-dev \
+ debhelper \
  build-essential \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
