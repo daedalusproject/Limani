@@ -32,6 +32,7 @@ build_base_develop_image:
     stage: build_base
     image: daedalusproject/base_docker
     script:
+        - export DEBUG=1
         - export IMAGENAME=base_develop
         - export IS_BASE_IMAGE=1
         - daedalus-project-docker-build
