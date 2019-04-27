@@ -29,7 +29,7 @@ build_base_develop_image:
 
 build_base_node8_image:
     stage: build_base_inherited_images
-    image: docker:stable
+    image: daedalusproject/base_docker
     script:
         - export IMAGENAME=base_node8
         - export IS_BASE_IMAGE=0
