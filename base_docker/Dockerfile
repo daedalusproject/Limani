@@ -11,7 +11,6 @@ RUN \
  containerd.io \
  daedalus-project-docker-build=0.1-1 \
  --no-install-recommends && \
- gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
- rm -rf /var/lib/apt/lists/* && \
+ rm -rf /var/lib/apt/lists/*
 
