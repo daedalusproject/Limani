@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=daedalusproject/base_develop
+ARG BASE_IMAGE=daedalusproject/base
 FROM $BASE_IMAGE
 
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
