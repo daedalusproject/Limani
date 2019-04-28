@@ -9,7 +9,7 @@ RUN \
  docker-ce \
  docker-ce-cli \
  containerd.io \
- daedalus-project-docker-build=0.1-3 \
+ daedalus-project-docker-build=0.2-2 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
