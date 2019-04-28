@@ -51,7 +51,7 @@ build_base_hugo_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_hugo
+        - export IMAGENAME=base_hugo
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -61,7 +61,7 @@ build_base_develop_hugo_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_develop_hugo
+        - export IMAGENAME=base_develop_hugo
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -71,7 +71,7 @@ build_base_daedaluscore_image:
     stage: build_base_inherited_images_2nd_gen
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_daedaluscore
+        - export IMAGENAME=base_daedaluscore
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -81,7 +81,7 @@ build_base_kubectl_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_kubectl
+        - export IMAGENAME=base_kubectl
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     artifacts:
@@ -95,7 +95,7 @@ build_base_xml_utils_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_xml_utils
+        - export IMAGENAME=base_xml_utils
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -105,7 +105,7 @@ build_base_bash_utils_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_bash_utils
+        - export IMAGENAME=base_bash_utils
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -115,7 +115,7 @@ build_base_redis_server_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_redis_server
+        - export IMAGENAME=base_redis_server
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -125,7 +125,7 @@ build_base_rabbitmq_server_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_rabbitmq_server
+        - export IMAGENAME=base_rabbitmq_server
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -135,7 +135,7 @@ build_base_deb_builder_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_deb_builder
+        - export IMAGENAME=base_deb_builder
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -145,7 +145,7 @@ build_base_curl_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_curl
+        - export IMAGENAME=base_curl
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -155,7 +155,7 @@ build_base_deb_perl_builder_image:
     stage: build_base_inherited_images_2nd_gen
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_deb_perl_builder
+        - export IMAGENAME=base_deb_perl_builder
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -166,7 +166,7 @@ build_base_deb_golang_builder_image:
     stage: build_base_inherited_images_2nd_gen
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_deb_golang_builder
+        - export IMAGENAME=base_deb_golang_builder
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -177,7 +177,7 @@ build_base_percona_server_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_percona_server
+        - export IMAGENAME=base_percona_server
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -187,7 +187,7 @@ build_base_percona_client_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_percona_client
+        - export IMAGENAME=base_percona_client
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -197,7 +197,7 @@ build_base_docker_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_docker
+        - export IMAGENAME=base_docker
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
