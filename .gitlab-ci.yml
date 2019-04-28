@@ -41,7 +41,7 @@ build_base_nginx_light_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker
     script:
-        - IMAGENAME=base_nginx_light
+        - export IMAGENAME=base_nginx_light
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
