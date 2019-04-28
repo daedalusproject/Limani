@@ -7,7 +7,7 @@ build_base_image:
     stage: build_base
     image: daedalusproject/base_docker:201904282011
     script:
-        - export IMAGENAME=base_develop
+        - export IMAGENAME=base
         - export IS_BASE_IMAGE=1
         - daedalus-project-docker-build
     artifacts:
