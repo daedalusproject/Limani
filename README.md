@@ -18,7 +18,8 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_xml_utils](/base_xml_utils): base image containing XML utils.
 * [base_bash_utils](/base_bash_utils): base image containing bash development utils.
 * [base_percona_client](/base_percona_client): base image with Percona server client.
-* [base_docker](/base_docker): base image with Docker and Docker utils installed.
+* [base_docker](/base_docker): base image with Docker utils installed.
+* [base_git](/base_git): base image with git installed.
 
 ### Services
 
