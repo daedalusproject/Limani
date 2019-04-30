@@ -24,6 +24,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 ### Services
 
 * [base_nginx_light](/base_nginx_light): base image with Nginx (light flavour).
+* [base_nginx_daedalus_light](/base_nginx_daedalus_light): base image with Nginx (daedalus light flavour).
 * [base_redis_server](/base_redis_server): base image containing Redis server.
 * [base_rabbitmq_server](/base_rabbitmq_server): base image containing Rabbitmq server.
 * [base_percona_server](/base_percona_server): base image with Percona server.
