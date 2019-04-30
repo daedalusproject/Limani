@@ -1,9 +1,9 @@
-# base__nginx_light
+# base_nginx_light
 
 [![Docker image](https://img.shields.io/badge/docker-latest-blue.svg)](https://hub.docker.com/r/daedalusproject/base_nginx_light)
 
-This image is based on Daedalus Project [base image](/base) comes with nodejs 8 installed.
+This image is based on Daedalus Project [base image](/base) comes with nginx installed.
 
 Packages installed:
 
- * nginx-light
+ * nginx-light 1.14.2-7
