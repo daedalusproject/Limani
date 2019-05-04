@@ -10,7 +10,7 @@ RUN \
  shunit2=2.1.6-1.1ubuntu1 \
  make=4.1-9.1ubuntu1 \
  ruby=1:2.5.1 \
- sudo
+ sudo \
  --no-install-recommends && \
  gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
