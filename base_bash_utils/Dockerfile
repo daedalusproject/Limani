@@ -15,7 +15,8 @@ RUN \
  gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
- useradd daedalus && \
- adduser daedalus sudo
+ adduser --disabled-password --gecos '' daedalus && \
+ adduser daedalus sudo && \
+ echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
  USER daedalus
