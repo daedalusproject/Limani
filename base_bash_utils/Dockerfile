@@ -10,10 +10,13 @@ RUN \
  shunit2=2.1.6-1.1ubuntu1 \
  make=4.1-9.1ubuntu1 \
  ruby=1:2.5.1 \
+ sudo \
  --no-install-recommends && \
  gem install bashcov --version 1.8.2 && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
- useradd daedalus
+ adduser --disabled-password --gecos '' daedalus && \
+ adduser daedalus sudo && \
+ echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
  USER daedalus
