@@ -7,3 +7,4 @@ This image is based on Daedalus Project [base image](/base) comes with percona-s
 Packages installed:
 
  * percona-server-client (8.0.15-5-1.bionic)
+ * daedalus-project-mysql-utils (0.2-1)
