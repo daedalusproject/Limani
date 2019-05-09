@@ -43,3 +43,4 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 
 * [base](/base_develop): base image containing Daedalus Project testing and Windmaker repos only.
 * [base_develop_hugo](/base_develop_hugo): base develop image with [Hugo](https://gohugo.io/).
+* [base_develop_percona_server](/base_develop_percona_server): base develop image with Percona server.
