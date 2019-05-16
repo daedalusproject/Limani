@@ -11,6 +11,7 @@ RUN \
  libgit-wrapper-perl=0.047-1 \
  libcatalyst-modules-perl=48 \
  libmodule-build-perl=0.422400-1 \
+ libmodule-build-tiny-perl=0.039-1 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
