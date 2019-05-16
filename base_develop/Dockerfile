@@ -14,6 +14,9 @@ RUN \
  echo "deb http://packages.windmaker.net/ any main" >> /etc/apt/sources.list && \
  echo "deb [arch=amd64] http://packages.windmaker.net/ bionic main" >> /etc/apt/sources.list && \
  echo "deb [arch=amd64] http://repo.daedalus-project.io/ bionic testing" >> /etc/apt/sources.list && \
+ echo "Package: *" > /etc/apt/preferences.d/priority && \
+ echo "Pin: origin repo.daedalus-project.io" >> /etc/apt/preferences.d/priority && \
+ echo "Pin-Priority: 700" >> /etc/apt/preferences.d/priority && \
  apt-get update -qq && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

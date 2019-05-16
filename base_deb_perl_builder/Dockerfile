@@ -5,10 +5,12 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
 RUN \
  apt-get update -qq && \
- apt-get install -qq -o=Dpkg::Use-Pty=0 -y dh-make-perl \
- libmodule-install-perl \
- libgit-wrapper-perl \
- libcatalyst-modules-perl \
+ apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
+ dh-make-perl=0.99 \
+ libmodule-install-perl=1.19-1 \
+ libgit-wrapper-perl=0.047-1 \
+ libcatalyst-modules-perl=48 \
+ libmodule-build-perl=0.422400-1 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
