@@ -20,6 +20,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_percona_client](/base_percona_client): base image with Percona server client.
 * [base_docker](/base_docker): base image with Docker utils installed.
 * [base_git](/base_git): base image with git installed.
+* [base_openssl](/base_openssl): base image with openssl installed.
 
 ### Services
 
