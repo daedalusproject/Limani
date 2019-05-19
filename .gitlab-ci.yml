@@ -232,3 +232,13 @@ build_base_docker_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
+
+build_base_openssl_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201905161558
+    script:
+        - export IMAGENAME=base_openssl
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
