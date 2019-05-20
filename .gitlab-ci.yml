@@ -2,6 +2,7 @@ stages:
     - build_base
     - build_base_inherited_images
     - build_base_inherited_images_2nd_gen
+    - build_base_inherited_images_3rd_gen
 
 build_base_image:
     stage: build_base
@@ -88,7 +89,7 @@ build_base_develop_hugo_image:
     - build_base_develop_image
 
 build_base_daedaluscore_image:
-    stage: build_base_inherited_images_2nd_gen
+    stage: build_base_inherited_images_3rd_gen
     image: daedalusproject/base_docker:201905161558
     script:
         - export IMAGENAME=base_daedaluscore
@@ -98,7 +99,7 @@ build_base_daedaluscore_image:
     - build_base_kubectl_image
 
 build_base_kubectl_image:
-    stage: build_base_inherited_images
+    stage: build_base_inherited_images_2nd_gen
     image: daedalusproject/base_docker:201905161558
     script:
         - export IMAGENAME=base_kubectl
@@ -110,6 +111,7 @@ build_base_kubectl_image:
         expire_in: 60 minutes
     dependencies:
     - build_base_image
+    - build_base_openssl_image
 
 build_base_xml_utils_image:
     stage: build_base_inherited_images
@@ -228,6 +230,16 @@ build_base_docker_image:
     image: daedalusproject/base_docker:201905161558
     script:
         - export IMAGENAME=base_docker
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
+build_base_openssl_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201905161558
+    script:
+        - export IMAGENAME=base_openssl
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
