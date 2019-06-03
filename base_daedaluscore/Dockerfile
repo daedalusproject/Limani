@@ -48,6 +48,11 @@ RUN \
  libdaedalus-hermes-perl \
  libsql-translator-perl \
  libconst-fast-perl \
+ libdevel-cover-report-codecov-perl \
+ libtest-simple-perl \
+ libtest-class-perl \
+ libtest-mockmodule-perl \
+ perl-doc \
  make \
  gcc \
  libc6-dev \
