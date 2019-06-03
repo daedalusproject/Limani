@@ -53,6 +53,7 @@ Packages installed:
 * libtest-simple-perl
 * libtest-class-perl
 * libtest-mockmodule-perl
+* libjson-xs-perl
 * make
 * gcc
 * libc6-dev

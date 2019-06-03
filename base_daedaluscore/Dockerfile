@@ -53,6 +53,7 @@ RUN \
  libtest-class-perl \
  libtest-mockmodule-perl \
  perl-doc \
+ libjson-xs-perl \
  make \
  gcc \
  libc6-dev \
