@@ -55,6 +55,7 @@ Packages installed:
 * libtest-mockmodule-perl
 * libjson-xs-perl
 * libdevel-cover-perl
+* libfurl-perl
 * make
 * gcc
 * libc6-dev

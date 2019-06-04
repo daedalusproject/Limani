@@ -55,6 +55,7 @@ RUN \
  perl-doc \
  libjson-xs-perl \
  libdevel-cover-perl \
+ libfurl-perl \
  make \
  gcc \
  libc6-dev \
