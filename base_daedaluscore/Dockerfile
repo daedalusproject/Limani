@@ -54,6 +54,7 @@ RUN \
  libtest-mockmodule-perl \
  perl-doc \
  libjson-xs-perl \
+ libdevel-cover-perl \
  make \
  gcc \
  libc6-dev \
