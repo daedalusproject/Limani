@@ -56,6 +56,7 @@ Packages installed:
 * libjson-xs-perl
 * libdevel-cover-perl
 * libfurl-perl
+* libsub-retry-perl
 * make
 * gcc
 * libc6-dev
