@@ -47,6 +47,15 @@ Packages installed:
 * libredis-perl libcache-redis-perl
 * libdaedalus-hermes-perl
 * libsql-translator-perl
+* libconst-fast-perl
+* perl-doc
+* libtest-simple-perl
+* libtest-class-perl
+* libtest-mockmodule-perl
+* libjson-xs-perl
+* libdevel-cover-perl
+* libfurl-perl
+* libsub-retry-perl
 * make
 * gcc
 * libc6-dev
