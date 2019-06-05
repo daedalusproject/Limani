@@ -48,7 +48,6 @@ Packages installed:
 * libdaedalus-hermes-perl
 * libsql-translator-perl
 * libconst-fast-perl
-* libdevel-cover-report-codecov-perl
 * perl-doc
 * libtest-simple-perl
 * libtest-class-perl
