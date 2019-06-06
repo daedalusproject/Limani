@@ -1,0 +1,15 @@
+ARG BASE_IMAGE=daedalusproject/base_deb_builder
+FROM $BASE_IMAGE
+
+MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
+
+RUN \
+ apt-get update -qq && \
+ apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
+ gcc=4:7.4.0-1ubuntu2.2 \
+ cmake=3.10.2-1ubuntu2 \
+ bison=2:3.0.4.dfsg-1build1 \
+ --no-install-recommends && \
+ apt-get purge -y --auto-remove && \
+ rm -rf /var/lib/apt/lists/* && \
+ echo -e "DEBEMAIL=\"alvaro.castellano.vela@gmail.com\"\nDEBFULLNAME=\"Álvaro Castellano Vela\"\nexport DEBEMAIL DEBFULLNAME\n" >> ~/.bashrc.backup
