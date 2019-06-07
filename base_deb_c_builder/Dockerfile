@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=daedalusproject/base
+ARG BASE_IMAGE=daedalusproject/base_deb_builder
 FROM $BASE_IMAGE
 
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
@@ -6,10 +6,10 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- dpkg-dev=1.19.0.5ubuntu2.1 \
- debhelper=12.1.1ubuntu1~ubuntu18.04.1 \
- build-essential=12.4ubuntu1 \
- fakeroot=1.22-2ubuntu1 \
+ gcc=4:7.4.0-1ubuntu2.2 \
+ cmake=3.10.2-1ubuntu2 \
+ bison=2:3.0.4.dfsg-1build1 \
+ flex=2.6.4-6 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
