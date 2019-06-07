@@ -9,6 +9,7 @@ RUN \
  gcc=4:7.4.0-1ubuntu2.2 \
  cmake=3.10.2-1ubuntu2 \
  bison=2:3.0.4.dfsg-1build1 \
+ flex=2.6.4-6
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
