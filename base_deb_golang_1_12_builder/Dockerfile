@@ -11,6 +11,7 @@ RUN \
  golang-1.12 \
  golang-1.12-go \
  --no-install-recommends && \
+ ln -s /usr/lib/go-1.12/bin/go /usr/bin/go && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
  echo -e "DEBEMAIL=\"alvaro.castellano.vela@gmail.com\"\nDEBFULLNAME=\"Álvaro Castellano Vela\"\nexport DEBEMAIL DEBFULLNAME\n" >> ~/.bashrc.backup
