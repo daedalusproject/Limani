@@ -9,6 +9,7 @@ RUN \
  dh-golang \
  golang-golang-x-sys-dev \
  golang-1.12 \
+ golang-1.12-go \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \
