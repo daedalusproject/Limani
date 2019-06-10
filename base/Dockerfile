@@ -18,5 +18,5 @@ RUN \
  echo "Pin: origin repo.daedalus-project.io" >> /etc/apt/preferences.d/priority && \
  echo "Pin-Priority: 700" >> /etc/apt/preferences.d/priority && \
  apt-get update -qq && \
- apt-get purge -y--auto-remove && \
+ apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
