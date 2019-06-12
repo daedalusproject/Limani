@@ -10,3 +10,5 @@ RUN \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
+
+CMD ["/usr/bin/td-agent-bit", "-c", "/etc/td-agent-bit/td-agent-bit.conf"]
