@@ -17,3 +17,5 @@ RUN \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
+
+ CMD ["/opt/td-agent/embedded/bin/fluentd", "--log", "/var/log/td-agent/td-agent.log"]
