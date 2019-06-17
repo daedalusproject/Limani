@@ -278,3 +278,33 @@ build_base_openssl_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
+
+build_base_logrotate:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201906071349
+    script:
+        - export IMAGENAME=base_logrotate
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
+build_base_td_agent:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201906071349
+    script:
+        - export IMAGENAME=base_td_agent
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
+build_base_td_agent_bit:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201906071349
+    script:
+        - export IMAGENAME=base_td_agent_bit
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image

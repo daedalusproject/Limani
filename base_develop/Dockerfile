@@ -7,7 +7,7 @@ RUN \
  wget -O - http://packages.windmaker.net/WINDMAKER-GPG-KEY.pub | apt-key add - && \
  wget -O - http://repo-bionic.windmaker.net/repo-bionic.windmaker.net.gpg-key.pub | apt-key add - && \
  wget -O - https://repo.daedalus-project.io/repo.daedalus-project.io.gpg-key.pub | apt-key add - && \
- apt-get purge -qq -o=Dpkg::Use-Pty=0 -y gnupg wget && \
+ apt-get purge -qq -o=Dpkg::Use-Pty=0 -y gnupg wget openssl && \
  apt-get autoremove -qq -o=Dpkg::Use-Pty=0 -y && \
  apt-get autoclean -qq -o=Dpkg::Use-Pty=0 -y && \
  echo "deb http://repo-bionic.windmaker.net/ bionic main" > /etc/apt/sources.list && \

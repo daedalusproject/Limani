@@ -5,7 +5,10 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
 RUN \
  apt-get update -qq && \
- apt-get install -qq -o=Dpkg::Use-Pty=0 -y --no-install-recommends \
- openssl=1.1.1-1ubuntu2.1~18.04.1 && \
+ apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
+ td-agent-bit=1.1.2-5 \
+ --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
+
+CMD ["/usr/bin/td-agent-bit", "-c", "/etc/td-agent-bit/td-agent-bit.conf"]

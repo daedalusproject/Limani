@@ -4,7 +4,7 @@
 
 Docker manifests of images used by one or more Daedalus Project Sub-projects.
 
-## Images available
+## Available images
 
 ### Base images
 
@@ -30,6 +30,12 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_redis_server](/base_redis_server): base image containing Redis server.
 * [base_rabbitmq_server](/base_rabbitmq_server): base image containing Rabbitmq server.
 * [base_percona_server](/base_percona_server): base image with Percona server.
+* [base_logrotate](/base_logrotate): base image with cron and logrotate.
+
+### Logging
+
+* [base_td_agent](/base_td_agent): base image with td-agent installed.
+* [base_td_agent_bit](/base_td_agent_bit): base image with td-agent-bit installed.
 
 ### Packaging
 
