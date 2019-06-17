@@ -4,7 +4,7 @@
 
 Docker manifests of images used by one or more Daedalus Project Sub-projects.
 
-## Images available
+## Available images
 
 ### Base images
 
@@ -30,6 +30,12 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_redis_server](/base_redis_server): base image containing Redis server.
 * [base_rabbitmq_server](/base_rabbitmq_server): base image containing Rabbitmq server.
 * [base_percona_server](/base_percona_server): base image with Percona server.
+* [base_logrotate](/base_logrotate): base image with cron and logrotate.
+
+### Logging
+
+* [base_td_agent](/base_td_agent): base image with td-agent installed.
+* [base_td_agent_bit](/base_td_agent_bit): base image with td-agent-bit installed.
 
 ### Packaging
 
@@ -37,6 +43,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_deb_perl_builder](/base_deb_perl_builder): base image containing Debian packaging utilities (perl flavour).
 * [base_deb_c_builder](/base_deb_c_builder): base image containing Debian packaging utilities (c flavour).
 * [base_deb_golang_builder](/base_deb_golang_builder): base image containing Debian packaging utilities (golang flavour).
+* [base_deb_golang_1_12_builder](/base_deb_golang_1_12_builder): base image containing Debian packaging utilities (golang 1.12 flavour).
 
 ### Misc
 
