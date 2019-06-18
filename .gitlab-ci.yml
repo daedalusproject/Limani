@@ -39,7 +39,7 @@ build_base_node8_image:
     - build_base_image
 
 build_base_git_image:
-    stage: build_base_inherited_images
+    stage: build_base_inherited_images_2nd_gen
     image: daedalusproject/base_docker:201906071349
     script:
         - export IMAGENAME=base_git
@@ -47,6 +47,7 @@ build_base_git_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
+    - build_base_inherited_images_2nd_gen
 
 build_base_nginx_light_image:
     stage: build_base_inherited_images
