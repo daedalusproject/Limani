@@ -47,7 +47,7 @@ build_base_git_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
-    - build_base_inherited_images_2nd_gen
+    - build_base_openssl_image
 
 build_base_nginx_light_image:
     stage: build_base_inherited_images
