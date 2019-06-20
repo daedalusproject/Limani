@@ -6,7 +6,7 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- gcc=4:7.4.0-1ubuntu2.2 \
+ gcc=4:7.4.0-1ubuntu2.3 \
  cmake=3.10.2-1ubuntu2 \
  bison=2:3.0.4.dfsg-1build1 \
  flex=2.6.4-6 \
