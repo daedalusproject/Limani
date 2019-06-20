@@ -39,7 +39,7 @@ build_base_node8_image:
     - build_base_image
 
 build_base_git_image:
-    stage: build_base_inherited_images_2nd_gen
+    stage: build_base_inherited_images
     image: daedalusproject/base_docker:201906071349
     script:
         - export IMAGENAME=base_git
@@ -47,7 +47,6 @@ build_base_git_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
-    - build_base_openssl_image
 
 build_base_nginx_light_image:
     stage: build_base_inherited_images
@@ -291,7 +290,7 @@ build_base_logrotate:
     - build_base_image
 
 build_base_td_agent:
-    stage: build_base_inherited_images_2nd_gen
+    stage: build_base_inherited_images
     image: daedalusproject/base_docker:201906071349
     script:
         - export IMAGENAME=base_td_agent
@@ -299,7 +298,6 @@ build_base_td_agent:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
-    - build_base_openssl_image
 
 build_base_td_agent_bit:
     stage: build_base_inherited_images
