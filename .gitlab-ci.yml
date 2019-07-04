@@ -89,11 +89,7 @@ build_base_develop_hugo_image:
     - build_base_develop_image
 
 build_base_daedaluscore_image:
-<<<<<<< HEAD
-    stage: build_base_inherited_images_3rd_gen
-=======
     stage: build_base_inherited_images_2nd_gen
->>>>>>> node8_needs_openssl
     image: daedalusproject/base_docker:201907020406
     script:
         - export IMAGENAME=base_daedaluscore
@@ -103,11 +99,7 @@ build_base_daedaluscore_image:
     - build_base_kubectl_image
 
 build_base_kubectl_image:
-<<<<<<< HEAD
-    stage: build_base_inherited_images_2nd_gen
-=======
     stage: build_base_inherited_images
->>>>>>> node8_needs_openssl
     image: daedalusproject/base_docker:201907020406
     script:
         - export IMAGENAME=base_kubectl
@@ -211,8 +203,6 @@ build_base_deb_c_builder_image:
     dependencies:
     - build_base_image
     - build_base_deb_builder_image
-
-
 
 build_base_deb_golang_builder_image:
     stage: build_base_inherited_images_2nd_gen
