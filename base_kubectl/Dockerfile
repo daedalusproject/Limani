@@ -5,6 +5,6 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y --no-install-recommends \
- kubectl=1.14.1-00 && \
+ kubectl=1.15.0-00 && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
