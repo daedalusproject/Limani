@@ -6,7 +6,7 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- dpkg-dev=1.19.0.5ubuntu2.1 \
+ dpkg-dev=1.19.0.5ubuntu2.2 \
  debhelper=12.1.1ubuntu1~ubuntu18.04.1 \
  build-essential=12.4ubuntu1 \
  fakeroot=1.22-2ubuntu1 \
