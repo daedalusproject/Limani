@@ -44,6 +44,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_deb_c_builder](/base_deb_c_builder): base image containing Debian packaging utilities (c flavour).
 * [base_deb_golang_builder](/base_deb_golang_builder): base image containing Debian packaging utilities (golang flavour).
 * [base_deb_golang_1_12_builder](/base_deb_golang_1_12_builder): base image containing Debian packaging utilities (golang 1.12 flavour).
+* [base_deb_python3_builder](/base_deb_python3_builder): base image containing Debian packaging utilities (python3 flavour).
 
 ### Misc
 
