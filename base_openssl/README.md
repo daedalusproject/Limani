@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) comes with openssl i
 
 Packages installed:
 
- * openssl (1.1.1-1ubuntu2.1~18.04.3)
+ * openssl (1.1.1-1ubuntu2.1~18.04.4)
