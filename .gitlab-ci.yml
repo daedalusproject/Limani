@@ -6,7 +6,7 @@ stages:
 
 build_base_image:
     stage: build_base
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base
         - export IS_BASE_IMAGE=1
@@ -18,7 +18,7 @@ build_base_image:
 
 build_base_develop_image:
     stage: build_base
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_develop
         - export IS_BASE_IMAGE=1
@@ -30,7 +30,7 @@ build_base_develop_image:
 
 build_base_node8_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_node8
         - export IS_BASE_IMAGE=0
@@ -40,7 +40,7 @@ build_base_node8_image:
 
 build_base_git_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_git
         - export IS_BASE_IMAGE=0
@@ -50,7 +50,7 @@ build_base_git_image:
 
 build_base_nginx_light_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_nginx_light
         - export IS_BASE_IMAGE=0
@@ -60,7 +60,7 @@ build_base_nginx_light_image:
 
 build_base_nginx_daedalus_light_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_nginx_daedalus_light
         - export IS_BASE_IMAGE=0
@@ -70,7 +70,7 @@ build_base_nginx_daedalus_light_image:
 
 build_base_hugo_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_hugo
         - export IS_BASE_IMAGE=0
@@ -80,7 +80,7 @@ build_base_hugo_image:
 
 build_base_develop_hugo_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_develop_hugo
         - export IS_BASE_IMAGE=0
@@ -90,7 +90,7 @@ build_base_develop_hugo_image:
 
 build_base_daedaluscore_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_daedaluscore
         - export IS_BASE_IMAGE=0
@@ -100,7 +100,7 @@ build_base_daedaluscore_image:
 
 build_base_kubectl_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_kubectl
         - export IS_BASE_IMAGE=0
@@ -114,7 +114,7 @@ build_base_kubectl_image:
 
 build_base_xml_utils_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_xml_utils
         - export IS_BASE_IMAGE=0
@@ -124,7 +124,7 @@ build_base_xml_utils_image:
 
 build_base_bash_utils_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_bash_utils
         - export IS_BASE_IMAGE=0
@@ -134,7 +134,7 @@ build_base_bash_utils_image:
 
 build_base_perl_utils_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_perl_utils
         - export IS_BASE_IMAGE=0
@@ -144,7 +144,7 @@ build_base_perl_utils_image:
 
 build_base_redis_server_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_redis_server
         - export IS_BASE_IMAGE=0
@@ -154,7 +154,7 @@ build_base_redis_server_image:
 
 build_base_rabbitmq_server_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_rabbitmq_server
         - export IS_BASE_IMAGE=0
@@ -164,7 +164,7 @@ build_base_rabbitmq_server_image:
 
 build_base_deb_builder_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_builder
         - export IS_BASE_IMAGE=0
@@ -172,9 +172,19 @@ build_base_deb_builder_image:
     dependencies:
     - build_base_image
 
+build_base_java_11_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_java_11
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
 build_base_curl_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_curl
         - export IS_BASE_IMAGE=0
@@ -182,9 +192,10 @@ build_base_curl_image:
     dependencies:
     - build_base_image
 
+
 build_base_deb_perl_builder_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_perl_builder
         - export IS_BASE_IMAGE=0
@@ -195,7 +206,7 @@ build_base_deb_perl_builder_image:
 
 build_base_deb_c_builder_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_c_builder
         - export IS_BASE_IMAGE=0
@@ -206,7 +217,7 @@ build_base_deb_c_builder_image:
 
 build_base_deb_golang_builder_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_golang_builder
         - export IS_BASE_IMAGE=0
@@ -217,7 +228,7 @@ build_base_deb_golang_builder_image:
 
 build_base_deb_golang_1_12_builder_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_golang_1_12_builder
         - export IS_BASE_IMAGE=0
@@ -228,7 +239,7 @@ build_base_deb_golang_1_12_builder_image:
 
 build_base_deb_python3_builder_image:
     stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_deb_python3_builder
         - export IS_BASE_IMAGE=0
@@ -239,7 +250,7 @@ build_base_deb_python3_builder_image:
 
 build_base_develop_percona_server_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_develop_percona_server
         - export IS_BASE_IMAGE=0
@@ -249,7 +260,7 @@ build_base_develop_percona_server_image:
 
 build_base_percona_server_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_percona_server
         - export IS_BASE_IMAGE=0
@@ -259,7 +270,7 @@ build_base_percona_server_image:
 
 build_base_percona_client_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_percona_client
         - export IS_BASE_IMAGE=0
@@ -269,7 +280,7 @@ build_base_percona_client_image:
 
 build_base_docker_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_docker
         - export IS_BASE_IMAGE=0
@@ -279,7 +290,7 @@ build_base_docker_image:
 
 build_base_openssl_image:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_openssl
         - export IS_BASE_IMAGE=0
@@ -289,7 +300,7 @@ build_base_openssl_image:
 
 build_base_logrotate:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_logrotate
         - export IS_BASE_IMAGE=0
@@ -299,7 +310,7 @@ build_base_logrotate:
 
 build_base_td_agent:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_td_agent
         - export IS_BASE_IMAGE=0
@@ -309,7 +320,7 @@ build_base_td_agent:
 
 build_base_td_agent_bit:
     stage: build_base_inherited_images
-    image: daedalusproject/base_docker:201907050507
+    image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_td_agent_bit
         - export IS_BASE_IMAGE=0
