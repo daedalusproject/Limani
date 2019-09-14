@@ -49,6 +49,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 ### Misc
 
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
+* [base_java_11](/base_java_11): base image with openjdk-11-jdk-headless installed.
 
 ## Develop images
 
