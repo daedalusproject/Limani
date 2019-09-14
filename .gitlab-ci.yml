@@ -339,7 +339,19 @@ build_base_selenium:
         - export IMAGENAME=base_selenium
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 60 minutes
     dependencies:
     - build_base_java_11_image
 
-
+build_base_selenium_chrome:
+    stage: build_base_inherited_images_3rd_gen
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_selenium_chrome
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_selenium
