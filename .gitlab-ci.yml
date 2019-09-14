@@ -179,6 +179,10 @@ build_base_java_11_image:
         - export IMAGENAME=base_java_11
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 60 minutes
     dependencies:
     - build_base_image
 
