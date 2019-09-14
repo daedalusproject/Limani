@@ -98,16 +98,6 @@ build_base_daedaluscore_image:
     dependencies:
     - build_base_kubectl_image
 
-build_base_selenium:
-    stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:201909071503
-    script:
-        - export IMAGENAME=base_selenium
-        - export IS_BASE_IMAGE=0
-        - daedalus-project-docker-build
-    dependencies:
-    - build_base_java_11_image
-
 build_base_kubectl_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker:201909071503
@@ -337,3 +327,15 @@ build_base_td_agent_bit:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
+
+build_base_selenium:
+    stage: build_base_inherited_images_2nd_gen
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_selenium
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_java_11_image
+
+
