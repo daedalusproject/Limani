@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=daedalusproject/base_java_11
+ARG BASE_IMAGE=daedalusproject/base_selenium
 FROM $BASE_IMAGE
 
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
