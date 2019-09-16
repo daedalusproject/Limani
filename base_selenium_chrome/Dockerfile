@@ -3,8 +3,8 @@ FROM $BASE_IMAGE
 
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
-COPY files/config.json /home/daedalus/config.json
-COPY files/start_selenium /home/daedalus/start_selenium
+COPY base_selenium_chrome/files/config.json /home/daedalus/config.json
+COPY base_selenium_chrome/files/start_selenium /home/daedalus/start_selenium
 
 RUN \
  apt-get update -qq && \
