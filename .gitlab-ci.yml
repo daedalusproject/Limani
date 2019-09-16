@@ -355,3 +355,13 @@ build_base_selenium_chrome:
         - daedalus-project-docker-build
     dependencies:
     - build_base_selenium
+
+build_base_selenium_grid:
+    stage: build_base_inherited_images_3rd_gen
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_selenium_grid
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_selenium
