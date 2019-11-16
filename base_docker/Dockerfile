@@ -6,9 +6,9 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- docker-ce \
- docker-ce-cli \
- containerd.io \
+ docker-ce=5:19.03.2~3-0~ubuntu-bionic \
+ docker-ce-cli=5:19.03.2~3-0~ubuntu-bionic \
+ containerd.io=1.2.6-3 \
  daedalus-project-docker-build=0.2-3 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
