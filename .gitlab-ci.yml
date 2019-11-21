@@ -58,11 +58,31 @@ build_base_nginx_light_image:
     dependencies:
     - build_base_image
 
+build_base_develop_nginx_light_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_develop_nginx_light
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
 build_base_nginx_daedalus_light_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker:201909071503
     script:
         - export IMAGENAME=base_nginx_daedalus_light
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+
+build_base_develop_nginx_daedalus_light_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:201909071503
+    script:
+        - export IMAGENAME=base_develop_nginx_daedalus_light
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
