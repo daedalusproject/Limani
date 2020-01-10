@@ -5,7 +5,12 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
 RUN \
  apt-get update -qq && \
- apt-get install -qq -o=Dpkg::Use-Pty=0 -y openjdk-11-jdk-headless=11.0.5+10-0ubuntu1.1~18.04 \
+ apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
+ golang-1.13 \
+ golang-1.13-go \
  --no-install-recommends && \
- apt-get purge -y --auto-remove && \
+ ln -s /usr/lib/go-1.13/bin/go /usr/bin/go && \
+ adduser --disabled-password --gecos '' daedalus && \
  rm -rf /var/lib/apt/lists/*
+
+USER daedalus
