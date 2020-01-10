@@ -8,6 +8,7 @@ RUN \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
  golang-1.13 \
  golang-1.13-go \
+ make \
  --no-install-recommends && \
  ln -s /usr/lib/go-1.13/bin/go /usr/bin/go && \
  adduser --disabled-password --gecos '' daedalus && \
