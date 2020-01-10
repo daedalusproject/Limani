@@ -6,8 +6,6 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- dh-golang \
- golang-golang-x-sys-dev \
  golang-1.13 \
  golang-1.13-go \
  --no-install-recommends && \

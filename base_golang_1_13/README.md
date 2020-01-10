@@ -1,9 +1,10 @@
-# base_java_11
+# base_golang_1_13
 
-[![Docker image](https://img.shields.io/badge/docker-latest-blue.svg)](https://hub.docker.com/r/daedalusproject/base_java_11)
+[![Docker image](https://img.shields.io/badge/docker-latest-blue.svg)](https://hub.docker.com/r/daedalusproject/base_golang_1_13)
 
-This image is based on Daedalus Project [base image](/base) comes with openjdk-11-jdk-headless installed.
+This image is based on Daedalus Project [base image](/base) comes with golang 1.13 installed.
 
 Packages installed:
 
- * openjdk-11-jdk-headless
+ * golang-1.13
+ * golang-1.13-go
