@@ -8,3 +8,9 @@ Packages installed:
 
  * golang-1.13
  * golang-1.13-go
+ * make
+ * git
+ * ca-certificates
+ * go-dep
+ * clang
+ * golint

@@ -13,6 +13,7 @@ RUN \
  ca-certificates=20180409 \
  go-dep=0.3.2-2 \
  clang=1:6.0-41~exp5~ubuntu1 \
+ golint=0.0+git20161013.3390df4-1 \
  --no-install-recommends && \
  ln -s /usr/lib/go-1.13/bin/go /usr/bin/go && \
  adduser --disabled-password --gecos '' daedalus && \
