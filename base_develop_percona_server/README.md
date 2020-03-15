@@ -6,7 +6,7 @@ This image is based on Daedalus Project [base develop image](/base_develop) come
 
 Packages installed:
 
- * percona-server-server (8.0.15-5-1.bionic)
- * daedalus-project-mysql-utils (0.4-1)
+ * percona-server-server (8.0.18-9-1.bionic)
+ * daedalus-project-mysql-utils (0.4-6)
 
 Default root password is *letmein*.
