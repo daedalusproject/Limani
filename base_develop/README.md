@@ -8,5 +8,5 @@ This image is based on Ubuntu Bionic image and uses Daedalus Project testing and
 deb http://repo-bionic.windmaker.net/ bionic main
 deb http://packages.windmaker.net/ any main
 deb [arch=amd64] http://packages.windmaker.net/ bionic main
-deb [arch=amd64] http://repo.daedalus-project.io/ bionic testing
+deb [arch=amd64] https://repo.daedalus-project.io/ bionic testing
 ```
