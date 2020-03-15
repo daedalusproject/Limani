@@ -55,7 +55,6 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_selenium](/base_selenium): base image with selenium installed.
 * [base_selenium_grid](/base_selenium_grid): base image running Selenium grid.
 * [base_selenium_chrome](/base_selenium_chrome): base image running Selenium using Chromedriver.
-* [base_sonar_scanner](/base_sonar_scanner): base image with sonar-scanner installed.
 
 ## Develop images
 

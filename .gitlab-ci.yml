@@ -392,16 +392,6 @@ build_base_selenium:
     dependencies:
     - build_base_java_11_image
 
-build_base_sonar_scanner:
-    stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:202001111126
-    script:
-        - export IMAGENAME=base_sonar_scanner
-        - export IS_BASE_IMAGE=0
-        - daedalus-project-docker-build
-    dependencies:
-    - build_base_java_11_image
-
 build_base_selenium_chrome:
     stage: build_base_inherited_images_3rd_gen
     image: daedalusproject/base_docker:202001111126
