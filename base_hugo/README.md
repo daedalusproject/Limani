@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) comes with hugo inst
 
 Packages installed:
 
- * hugo (v0.54)
+ * hugo (v0.67.1)
