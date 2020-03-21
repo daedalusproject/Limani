@@ -13,7 +13,7 @@ ENV FLUENT_SOCKET /var/run/td-agent/td-agent.sock
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- td-agent=3.8.3-1 \
+ td-agent=3.6.0-0 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
