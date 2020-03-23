@@ -14,7 +14,7 @@ build_base_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
 
 build_base_develop_image:
     stage: build_base
@@ -26,7 +26,7 @@ build_base_develop_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
 
 build_base_node8_image:
     stage: build_base_inherited_images
@@ -128,7 +128,7 @@ build_base_kubectl_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
     dependencies:
     - build_base_image
 
@@ -202,7 +202,21 @@ build_base_java_11_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
+    dependencies:
+    - build_base_image
+
+build_base_golang_1_12_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:202001111126
+    script:
+        - export IMAGENAME=base_golang_1_12
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 80 minutes
     dependencies:
     - build_base_image
 
@@ -216,10 +230,23 @@ build_base_golang_1_13_image:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
     dependencies:
     - build_base_image
 
+build_base_golang_1_14_image:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:202001111126
+    script:
+        - export IMAGENAME=base_golang_1_14
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    artifacts:
+        paths:
+        - timestamp
+        expire_in: 80 minutes
+    dependencies:
+    - build_base_image
 
 build_base_curl_image:
     stage: build_base_inherited_images
@@ -230,7 +257,6 @@ build_base_curl_image:
         - daedalus-project-docker-build
     dependencies:
     - build_base_image
-
 
 build_base_deb_perl_builder_image:
     stage: build_base_inherited_images_2nd_gen
@@ -248,17 +274,6 @@ build_base_deb_c_builder_image:
     image: daedalusproject/base_docker:202001111126
     script:
         - export IMAGENAME=base_deb_c_builder
-        - export IS_BASE_IMAGE=0
-        - daedalus-project-docker-build
-    dependencies:
-    - build_base_image
-    - build_base_deb_builder_image
-
-build_base_deb_golang_builder_image:
-    stage: build_base_inherited_images_2nd_gen
-    image: daedalusproject/base_docker:202001111126
-    script:
-        - export IMAGENAME=base_deb_golang_builder
         - export IS_BASE_IMAGE=0
         - daedalus-project-docker-build
     dependencies:
@@ -286,6 +301,18 @@ build_base_deb_golang_1_13_builder_image:
     dependencies:
     - build_base_image
     - build_base_deb_builder_image
+
+build_base_deb_golang_1_14_builder_image:
+    stage: build_base_inherited_images_2nd_gen
+    image: daedalusproject/base_docker:202001111126
+    script:
+        - export IMAGENAME=base_deb_golang_1_14_builder
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
+    - build_base_deb_builder_image
+
 
 build_base_deb_python3_builder_image:
     stage: build_base_inherited_images_2nd_gen
@@ -388,7 +415,7 @@ build_base_selenium:
     artifacts:
         paths:
         - timestamp
-        expire_in: 60 minutes
+        expire_in: 80 minutes
     dependencies:
     - build_base_java_11_image
 

@@ -42,16 +42,18 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_deb_builder](/base_deb_builder): base image containing Debian packaging utilities.
 * [base_deb_perl_builder](/base_deb_perl_builder): base image containing Debian packaging utilities (perl flavour).
 * [base_deb_c_builder](/base_deb_c_builder): base image containing Debian packaging utilities (c flavour).
-* [base_deb_golang_builder](/base_deb_golang_builder): base image containing Debian packaging utilities (golang flavour).
 * [base_deb_golang_1_12_builder](/base_deb_golang_1_12_builder): base image containing Debian packaging utilities (golang 1.12 flavour).
 * [base_deb_golang_1_13_builder](/base_deb_golang_1_13_builder): base image containing Debian packaging utilities (golang 1.13 flavour).
+* [base_deb_golang_1_14_builder](/base_deb_golang_1_14_builder): base image containing Debian packaging utilities (golang 1.14 flavour).
 * [base_deb_python3_builder](/base_deb_python3_builder): base image containing Debian packaging utilities (python3 flavour).
 
 ### Misc
 
 * [base_daedaluscore](/base_daedaluscore): base image with [Daedalus Core](https://git.daedalus-project.io/daedalusproject/Daedalus-Core) dependences.
 * [base_java_11](/base_java_11): base image with openjdk-11-jdk-headless installed.
+* [base_golang_1_12](/base_golang_1_12): base image with golang 1.12 installed.
 * [base_golang_1_13](/base_golang_1_13): base image with golang 1.13 installed.
+* [base_golang_1_14](/base_golang_1_14): base image with golang 1.14 installed.
 * [base_selenium](/base_selenium): base image with selenium installed.
 * [base_selenium_grid](/base_selenium_grid): base image running Selenium grid.
 * [base_selenium_chrome](/base_selenium_chrome): base image running Selenium using Chromedriver.
