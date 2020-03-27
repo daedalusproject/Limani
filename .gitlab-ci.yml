@@ -395,15 +395,15 @@ build_base_td_agent:
     dependencies:
     - build_base_image
 
-      #build_base_td_agent_bit:
-      #    stage: build_base_inherited_images
-      #    image: daedalusproject/base_docker:202001111126
-      #    script:
-      #        - export IMAGENAME=base_td_agent_bit
-      #        - export IS_BASE_IMAGE=0
-      #        - daedalus-project-docker-build
-      #    dependencies:
-      #    - build_base_image
+build_base_td_agent_bit:
+    stage: build_base_inherited_images
+    image: daedalusproject/base_docker:202001111126
+    script:
+        - export IMAGENAME=base_td_agent_bit
+        - export IS_BASE_IMAGE=0
+        - daedalus-project-docker-build
+    dependencies:
+    - build_base_image
 
 build_base_selenium:
     stage: build_base_inherited_images_2nd_gen
