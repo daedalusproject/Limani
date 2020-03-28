@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base develop image](/base_develop) come
 
 Packages installed:
 
- * hugo (v0.55)
+ * hugo (v0.67.1)
