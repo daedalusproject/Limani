@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) comes with rabbit-se
 
 Packages installed:
 
- * rabbitmq-server (3.7.14-1)
+ * rabbitmq-server (3.8.3-1)

@@ -6,7 +6,7 @@ This image is based on Daedalus Project [base image](/base) comes with docker an
 
 Packages installed:
 
- * docker-ce \
- * docker-ce-cli \
- * containerd.io \
- * daedalus-project-docker-build=0.1-1 \
+ * docker-ce
+ * docker-ce-cli
+ * containerd.io
+ * daedalus-project-docker-build

@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) and comes with td-ag
 
 Packages installed:
 
- * td-agent-bit (1.1.2-5)
+ * td-agent-bit (1.3.11)
