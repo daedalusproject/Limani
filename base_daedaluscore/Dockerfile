@@ -59,6 +59,8 @@ RUN \
  make \
  gcc \
  libc6-dev \
+ libdbd-sqlite3 \
+ libdbd-sqlite3-perl \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*
