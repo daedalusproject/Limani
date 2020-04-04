@@ -14,6 +14,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 
 * [base_curl](/base_curl): base image with curl.
 * [base_node8](/base_node8): base image with nodejs 8 LTS.
+* [base_node12](/base_node12): base image with nodejs 12 LTS.
 * [base_hugo](/base_hugo): base image with [Hugo](https://gohugo.io/).
 * [base_xml_utils](/base_xml_utils): base image containing XML utils.
 * [base_bash_utils](/base_bash_utils): base image containing bash development utils.
