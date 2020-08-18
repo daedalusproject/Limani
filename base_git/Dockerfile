@@ -3,7 +3,7 @@ FROM $BASE_IMAGE
 MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 
 RUN \
- apt-get update -qq && 
+ apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
  git=1:2.25.1-1ubuntu3 \
  ca-certificates=20190110ubuntu1 \
