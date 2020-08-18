@@ -8,7 +8,7 @@ RUN \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
  nodejs=8.10.0~dfsg-2ubuntu0.4 \
  npm=3.5.2-0ubuntu4 \
- ca-certificates=20180409 \
+ ca-certificates=20190110ubuntu1.1 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

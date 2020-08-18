@@ -6,8 +6,8 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- nodejs=12.16.1-1nodesource1 \
- ca-certificates=20180409 \
+ nodejs=12.18.3-1nodesource1 \
+ ca-certificates=20190110ubuntu1.1 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

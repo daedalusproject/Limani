@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) comes with nodejs 12
 
 Packages installed:
 
- * nodejs (12.16.1-1nodesource1)
+ * nodejs (12.18.3-1nodesource1)

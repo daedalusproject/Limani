@@ -8,3 +8,4 @@ Packages installed:
 
  * nodejs (8.10.0~dfsg-2ubuntu0.4)
  * npm (3.5.2-0ubuntu4)
+ * ca-certificates (20190110ubuntu1.1)
