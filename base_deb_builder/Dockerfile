@@ -6,10 +6,10 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- dpkg-dev=1.19.0.5ubuntu2.3 \
- debhelper=12.1.1ubuntu1~ubuntu18.04.1 \
- build-essential=12.4ubuntu1 \
- fakeroot=1.22-2ubuntu1 \
+ dpkg-dev=1.19.7ubuntu3 \
+ debhelper=12.10ubuntu1 \
+ build-essential=12.8ubuntu1 \
+ fakeroot=1.24-1 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/* && \

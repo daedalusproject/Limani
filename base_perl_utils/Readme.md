@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base image](/base) comes with perl deve
 
 Packages installed:
 
- * libtest-perl-critic-perl (1.03-1)
+ * libtest-perl-critic-perl (1.04-1)
