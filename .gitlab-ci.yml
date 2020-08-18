@@ -28,16 +28,6 @@ build_base_develop_image:
         - timestamp
         expire_in: 120 minutes
 
-build_base_node8_image:
-    stage: build_base_inherited_images
-    image: daedalusproject/base_docker:202004061805
-    script:
-        - export IMAGENAME=base_node8
-        - export IS_BASE_IMAGE=0
-        - daedalus-project-docker-build
-    dependencies:
-    - build_base_image
-
 build_base_node12_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker:202004061805
