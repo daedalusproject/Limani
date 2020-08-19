@@ -6,7 +6,7 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- 1.14.3-2ubuntu2~20.04.1 \
+ golang-1.14=1.14.3-2ubuntu2~20.04.1 \
  golang-1.14-go=1.14.3-2ubuntu2~20.04.1 \
  make=4.2.1-1.2 \
  git=1:2.25.1-1ubuntu3 \

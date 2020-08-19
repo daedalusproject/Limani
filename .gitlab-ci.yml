@@ -206,20 +206,6 @@ build_base_java_11_image:
     dependencies:
     - build_base_image
 
-build_base_golang_1_12_image:
-    stage: build_base_inherited_images
-    image: daedalusproject/base_docker:202004061805
-    script:
-        - export IMAGENAME=base_golang_1_12
-        - export IS_BASE_IMAGE=0
-        - daedalus-project-docker-build
-    artifacts:
-        paths:
-        - timestamp
-        expire_in: 80 minutes
-    dependencies:
-    - build_base_image
-
 build_base_golang_1_13_image:
     stage: build_base_inherited_images
     image: daedalusproject/base_docker:202004061805
