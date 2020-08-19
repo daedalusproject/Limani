@@ -6,4 +6,4 @@ This image is based on Daedalus Project [base develop image](/base_develop) and 
 
 Packages installed:
 
- * nginx-light 1.18.0-0ubuntu1
+ * nginx-light 1.18.0-5
