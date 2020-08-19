@@ -6,8 +6,8 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- cron=3.0pl1-128.1ubuntu1 \
- logrotate=3.11.0-0.1ubuntu1 \
+ cron=3.0pl1-136ubuntu1 \
+ logrotate=3.14.0-4ubuntu3 \
  --no-install-recommends && \
  apt-get purge -y --auto-remove && \
  rm -rf /var/lib/apt/lists/*

@@ -6,7 +6,9 @@ This image is based on Daedalus Project [base deb builder image](/base_deb_build
 
 Packages installed:
 
- * dh-make-perl
- * libmodule-install-perl
- * libgit-wrapper-perl
- * libcatalyst-modules-perl
+ * dh-make-perl 0.109
+ * libmodule-install-perl 1.19-1
+ * libgit-wrapper-perl 0.048-1
+ * libcatalyst-modules-perl 48
+ * libmodule-build-perl 0.423100-1
+ * libmodule-build-tiny-perl 0.039-1
