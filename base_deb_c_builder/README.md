@@ -6,7 +6,7 @@ This image is based on Daedalus Project [base deb builder image](/base_deb_build
 
 Packages installed:
 
- * gcc 4:7.4.0-1ubuntu2.2
- * cmake 3.10.2-1ubuntu2.18.04.1
- * bison 2:3.0.4.dfsg-1build1
- * flex 2.6.4-6
+ * gcc 4:9.3.0-1ubuntu2
+ * cmake 3.16.3-1ubuntu1
+ * bison 2:3.5.1+dfsg-1
+ * flex 2.6.4-6.2

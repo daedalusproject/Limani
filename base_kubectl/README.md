@@ -6,4 +6,4 @@ This image is based on Daedalus Project [openssl image](/base_openssl) comes wit
 
 Packages installed:
 
- * kubectl (1.14.1-00)
+ * kubectl (1.18.8-00)

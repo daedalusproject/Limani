@@ -6,5 +6,5 @@ This image is based on Daedalus Project [base image](/base) and comes with cron 
 
 Packages installed:
 
- * cron (3.0pl1-128.1ubuntu1)
- * logrotate (3.11.0-0.1ubuntu1)
+ * cron (3.0pl1-136ubuntu1)
+ * logrotate (3.14.0-4ubuntu3)

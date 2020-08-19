@@ -6,14 +6,14 @@ MAINTAINER Álvaro Castellano Vela <alvaro.castellano.vela@gmail.com>
 RUN \
  apt-get update -qq && \
  apt-get install -qq -o=Dpkg::Use-Pty=0 -y \
- golang-1.14 \
- golang-1.14-go \
- make=4.1-9.1ubuntu1 \
- git=1:2.17.1-1ubuntu0.5 \
- ca-certificates=20180409 \
- go-dep=0.3.2-2 \
- clang=1:6.0-41~exp5~ubuntu1 \
- golint=0.0+git20161013.3390df4-1 \
+ golang-1.14=1.14.3-2ubuntu2~20.04.1 \
+ golang-1.14-go=1.14.3-2ubuntu2~20.04.1 \
+ make=4.2.1-1.2 \
+ git=1:2.25.1-1ubuntu3 \
+ ca-certificates=20190110ubuntu1.1 \
+ go-dep=0.5.4-3 \
+ clang=1:10.0-50~exp1 \
+ golint=0.0+git20200130.910be7a-1 \
  --no-install-recommends && \
  ln -s /usr/lib/go-1.14/bin/go /usr/bin/go && \
  adduser --disabled-password --gecos '' daedalus && \
