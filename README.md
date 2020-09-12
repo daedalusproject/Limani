@@ -45,6 +45,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_deb_c_builder](/base_deb_c_builder): base image containing Debian packaging utilities (c flavour).
 * [base_deb_golang_1_13_builder](/base_deb_golang_1_13_builder): base image containing Debian packaging utilities (golang 1.13 flavour).
 * [base_deb_golang_1_14_builder](/base_deb_golang_1_14_builder): base image containing Debian packaging utilities (golang 1.14 flavour).
+* [base_deb_golang_1_15_builder](/base_deb_golang_1_15_builder): base image containing Debian packaging utilities (golang 1.15 flavour).
 * [base_deb_python3_builder](/base_deb_python3_builder): base image containing Debian packaging utilities (python3 flavour).
 
 ### Misc
@@ -53,6 +54,7 @@ Docker manifests of images used by one or more Daedalus Project Sub-projects.
 * [base_java_11](/base_java_11): base image with openjdk-11-jdk-headless installed.
 * [base_golang_1_13](/base_golang_1_13): base image with golang 1.13 installed.
 * [base_golang_1_14](/base_golang_1_14): base image with golang 1.14 installed.
+* [base_golang_1_15](/base_golang_1_15): base image with golang 1.15 installed.
 * [base_selenium](/base_selenium): base image with selenium installed.
 * [base_selenium_grid](/base_selenium_grid): base image running Selenium grid.
 * [base_selenium_chrome](/base_selenium_chrome): base image running Selenium using Chromedriver.
