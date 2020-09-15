@@ -10,3 +10,4 @@ Packages installed:
  * golang-golang-x-sys-dev
  * golang-1.13
  * golang-1.13-go
+ * go-bin-deb

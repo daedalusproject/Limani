@@ -10,6 +10,7 @@ RUN \
  golang-golang-x-sys-dev \
  golang-1.13 \
  golang-1.13-go \
+ go-bin-deb \
  --no-install-recommends && \
  ln -s /usr/lib/go-1.13/bin/go /usr/bin/go && \
  apt-get purge -y --auto-remove && \
